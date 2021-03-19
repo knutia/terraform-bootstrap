@@ -31,7 +31,8 @@ resource "azurerm_key_vault_access_policy" "terraform_state_owner" {
     "Get",
     "List",
     "Set",
-    "Delete"
+    "Delete",
+    "Purge"
   ]
 }
 

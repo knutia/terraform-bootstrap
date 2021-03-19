@@ -12,7 +12,7 @@ resource "azurerm_log_analytics_workspace" "state" {
 resource "azurerm_monitor_diagnostic_setting" "state" {
   name                       = "key_vault"
   target_resource_id         = azurerm_key_vault.state.id
-  storage_account_id         = data.azurerm_storage_account.state.id
+  #storage_account_id         = data.azurerm_storage_account.state.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.state.id
 
 

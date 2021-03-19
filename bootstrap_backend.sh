@@ -22,7 +22,7 @@ then
   echo "Found existing storage account $storage_account_name in $resource_group_name. Reusing."
 else
   storage_account_name=terraformst$(tr -dc "[:lower:][:digit:]" < /dev/urandom | head -c 5)
-  az storage account create --name $storage_account_name --resource-group $resource_group_name --kind StorageV2 --sku Standard_RAGRS --tags created_by=bootstrap_backend.sh
+  az storage account create --name $storage_account_name --resource-group $resource_group_name --kind StorageV2 --sku Standard_LRS --tags created_by=bootstrap_backend.sh
 fi
 
 storage_account_id=$(az storage account show --name $storage_account_name --resource-group $resource_group_name --query id --output tsv)
